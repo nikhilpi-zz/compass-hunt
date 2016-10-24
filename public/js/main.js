@@ -29,43 +29,21 @@ $(document).ready(function() {
 	  console.log('Compass heading by ' + method);
 	});
 
+    var start_lat = 37.762777;
+	var start_long = -122.421079;
 
 	var target_lat = 37.762223;
 	var target_long = -122.421511;
 
-	//Refresh
-	var target_bearing = 0;
+	var target_bearing = bearing(start_lat, start_long, target_lat,target_long);
 
-	function get_target_bearing() {
-		return target_bearing;
-	}
-
-	function set_target_bearing(tb) {
-		console.log('Setting Bearing: '+tb)
-		target_bearing = tb;
-	}
-
-	function setCompass(position) {
-		var current_lat = position.coords.latitude;
-		var current_long = position.coords.longitude;
-
-		var tb = bearing(current_lat, current_long, target_lat,target_long)
-		set_target_bearing(tb);
-	}
 
 	Compass.watch(function (heading) {
-		var tb = get_target_bearing();
 		$('.degrees').text(heading);
-		console.log('In Compass: '+tb)
-		$('.compass').css('transform', 'rotate(' + (-heading +tb) + 'deg)');
+		$('.compass').css('transform', 'rotate(' + (-heading +target_bearing) + 'deg)');
 	});
 
-	//RUN
-	function getLoc() {
-		getGoogleLocation(function(x){console.log(x);});
-	}
-	
-	var t=setInterval(getLoc,1000);
+
 	
 });
 

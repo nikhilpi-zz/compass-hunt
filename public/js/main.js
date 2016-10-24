@@ -16,18 +16,19 @@ $(document).ready(function() {
         return rad * 180 / Math.PI;
     };
 
+    var GOOGLE_API = 'AIzaSyAx8CFSF8PhmnlDHEGntwV0lORywod34pk';
+
+    function getGoogleLocation(cb) {
+    	$.post( "https://www.googleapis.com/geolocation/v1/geolocate?key="+GOOGLE_API, function( data ) {
+		  cb(data);
+		});
+    }
+
     // Boot
     Compass.init(function (method) {
 	  console.log('Compass heading by ' + method);
 	});
 
-	function getLocation() {
-	    if (navigator.geolocation) {
-	        navigator.geolocation.watchPosition(setCompass);
-	    } else {
-	        console.log("Geolocation is not supported by this browser.");
-	    }
-	}
 
 	var target_lat = 37.762223;
 	var target_long = -122.421511;
@@ -60,7 +61,7 @@ $(document).ready(function() {
 	});
 
 	//RUN
-	getLocation();
+	getGoogleLocation(function(x){console.log(x);});
 });
 
 

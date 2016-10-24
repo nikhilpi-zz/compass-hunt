@@ -35,18 +35,28 @@ $(document).ready(function() {
 	//Refresh
 	var target_bearing = 0;
 
+	function get_target_bearing() {
+		return target_bearing;
+	}
+
+	function set_target_bearing(tb) {
+		console.log('Setting Bearing: '+tb)
+		target_bearing = tb;
+	}
+
 	function setCompass(position) {
 		var current_lat = position.coords.latitude;
 		var current_long = position.coords.longitude;
 
-		target_bearing = bearing(current_lat, current_long, target_lat,target_long)
-		console.log('Setting Bearing: '+target_bearing)
+		var tb = bearing(current_lat, current_long, target_lat,target_long)
+		set_target_bearing(tb);
 	}
 
 	Compass.watch(function (heading) {
+		var tb = get_target_bearing();
 		$('.degrees').text(heading);
-		console.log('In Compass: '+target_bearing)
-		$('.compass').css('transform', 'rotate(' + (-heading +target_bearing) + 'deg)');
+		console.log('In Compass: '+tb)
+		$('.compass').css('transform', 'rotate(' + (-heading +tb) + 'deg)');
 	});
 
 	//RUN

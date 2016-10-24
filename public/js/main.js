@@ -56,7 +56,7 @@ $(document).ready(function() {
 		var tb = get_target_bearing();
 		$('.degrees').text(heading);
 		console.log('In Compass: '+tb)
-		$('.compass').css('transform', 'rotate(' + (-heading +tb) + 'deg)');
+		$('.compass').css('transform', 'rotate(' + (-heading -tb) + 'deg)');
 	});
 
 	//RUN

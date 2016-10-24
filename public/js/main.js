@@ -33,21 +33,21 @@ $(document).ready(function() {
 	var target_long = -122.421511;
 
 	//Refresh
-	var watchID;
+	var target_bearing = 0;
 
 	function setCompass(position) {
 		var current_lat = position.coords.latitude;
 		var current_long = position.coords.longitude;
 
-		console.log(current_lat)
-		var bear = bearing(current_lat, current_long, target_lat,target_long)
-
-		Compass.unwatch(watchID);
-		watchID = Compass.watch(function (heading) {
-		  $('.degrees').text(heading);
-		  $('.compass').css('transform', 'rotate(' + (-heading +bear) + 'deg)');
-		});
+		target_bearing = bearing(current_lat, current_long, target_lat,target_long)
+		console.log('Setting Bearing: '+target_bearing)
 	}
+
+	Compass.watch(function (heading) {
+		$('.degrees').text(heading);
+		console.log('In Compass: '+target_bearing)
+		$('.compass').css('transform', 'rotate(' + (-heading +target_bearing) + 'deg)');
+	});
 
 	//RUN
 	getLocation();

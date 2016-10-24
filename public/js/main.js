@@ -61,7 +61,12 @@ $(document).ready(function() {
 	});
 
 	//RUN
-	getGoogleLocation(function(x){console.log(x);});
+	function getLoc() {
+		getGoogleLocation(function(x){console.log(x);});
+	}
+	
+	var t=setInterval(getLoc,1000);
+	
 });
 
 

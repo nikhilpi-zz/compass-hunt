@@ -40,7 +40,7 @@ $(document).ready(function() {
 
 	Compass.watch(function (heading) {
 		$('.degrees').text(heading);
-		$('.compass').css('transform', 'rotate(' + (-heading +target_bearing) + 'deg)');
+		$('.compass').css('transform', 'rotate(' + (-heading -target_bearing) + 'deg)');
 	});
 
 

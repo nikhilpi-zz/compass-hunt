@@ -16,35 +16,50 @@ $(document).ready(function() {
         return rad * 180 / Math.PI;
     };
 
-    var GOOGLE_API = 'AIzaSyAx8CFSF8PhmnlDHEGntwV0lORywod34pk';
-
-    function getGoogleLocation(cb) {
-    	$.post( "https://www.googleapis.com/geolocation/v1/geolocate?key="+GOOGLE_API, function( data ) {
-		  cb(data);
-		});
-    }
-
     // Boot
     Compass.init(function (method) {
 	  console.log('Compass heading by ' + method);
 	});
 
-    var start_lat = 37.762777;
-	var start_long = -122.421079;
+	function getLocation() {
+	    if (navigator.geolocation) {
+	        navigator.geolocation.watchPosition(setCompass);
+	    } else {
+	        console.log("Geolocation is not supported by this browser.");
+	    }
+	}
 
 	var target_lat = 37.762223;
 	var target_long = -122.421511;
 
-	var target_bearing = bearing(start_lat, start_long, target_lat,target_long);
+	//Refresh
+	var target_bearing = 0;
 
+	function get_target_bearing() {
+		return target_bearing;
+	}
+
+	function set_target_bearing(tb) {
+		console.log('Setting Bearing: '+tb)
+		target_bearing = tb;
+	}
+
+	function setCompass(position) {
+		var current_lat = position.coords.latitude;
+		var current_long = position.coords.longitude;
+
+		var tb = bearing(current_lat, current_long, target_lat,target_long)
+		set_target_bearing(tb);
+	}
 
 	Compass.watch(function (heading) {
+		var tb = get_target_bearing();
 		$('.degrees').text(heading);
-		$('.compass').css('transform', 'rotate(' + (-heading -target_bearing) + 'deg)');
+		console.log('In Compass: '+tb)
+		$('.compass').css('transform', 'rotate(' + (-heading +tb) + 'deg)');
 	});
 
-
-	
+	//RUN
+	getLocation();
 });
-
 

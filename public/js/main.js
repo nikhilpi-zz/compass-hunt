@@ -29,6 +29,8 @@ $(document).ready(function() {
 	    }
 	}
 
+	setInterval(function(){$( ".hint" ).show("slow");},60000);
+
 	var target_lat = 37.762223;
 	var target_long = -122.421511;
 

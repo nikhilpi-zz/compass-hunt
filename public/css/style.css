@@ -8816,193 +8816,20 @@ html,
 body {
   height: 100%;
 }
-.compass {
+#compass_contianer .compass {
+  width: 100px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+}
+#compass_contianer .lead {
   text-align: center;
 }
-a,
-a:hover,
-a:visited,
-a:focus {
-  color: #000000;
-  text-decoration: none;
-}
-#wrap {
-  min-height: 100%;
-}
-.content {
-  padding-bottom: 80px;
-}
-body {
-  padding-top: 70px;
-}
-.red_ul {
-  border-bottom: 5px solid #BF1519;
-}
-.gry_bkg {
-  background-color: #eeeeee;
-}
-.red_btn,
-a.red_btn,
-a:visited.red_btn,
-a:focus.red_btn {
-  border-radius: 0;
-  background-color: #BF1519;
-  color: #FFFFFF;
-  border: none;
-  font-weight: 700;
-}
-.red_btn:hover,
-a.red_btn:hover,
-a:visited.red_btn:hover,
-a:focus.red_btn:hover {
-  color: #333;
-  background-color: #e6e6e6;
-  border-color: #adadad;
-}
-.project_box {
-  text-align: left;
-  margin-bottom: 20px;
-}
-.project_box .img_wrapper {
-  height: 150px;
-  overflow: hidden;
-}
-.project_box img {
-  width: 100%;
-  margin: auto;
-}
-.project_box .caption {
-  background-color: #BF1519;
-  color: #FFFFFF;
-  padding: 15px;
-}
-.project_box .caption h3 {
-  margin: 0;
-}
-.project_box .caption h3,
-.project_box .caption p {
-  margin-bottom: 3px;
-}
-.project_box .caption .summary {
-  height: 50px;
-}
-nav.navbar-default {
-  background-color: #FFFFFF;
-  border: none;
-  border-top: 10px solid #BF1519;
-}
-nav.navbar-default .navbar-brand {
-  color: #BF1519;
-  font-weight: 900;
-  font-size: 40px;
-  padding: 25px 30px;
-}
-nav.navbar-default .navbar-nav > li > a {
-  padding-top: 25px;
-  padding-bottom: 25px;
-  font-size: 22px;
-  color: #7E8AA2;
-}
-.img_border {
-  border: solid #263248 10px;
+#compass_contianer .hint {
+  display: none;
 }
 #home_page {
-  padding-top: 30px;
-}
-#home_page .logo_icon {
-  width: 150px;
-  margin: auto;
-}
-#home_page section {
-  padding-top: 50px;
-  padding-bottom: 70px;
-}
-#home_page .section_head {
-  padding-bottom: 20px;
-}
-#home_page .skill_icon {
-  font-size: 75px;
-}
-#home_page .work_info {
-  background-color: #BF1519;
-  color: #FFFFFF;
-  margin-bottom: 30px;
-  padding: 20px;
-}
-#home_page .work_info h2,
-#home_page .work_info p {
-  margin: 0;
-}
-#home_page .work_info p.lead {
-  padding-top: 5px;
-}
-#home_page .work_info .header {
-  text-align: right;
-}
-#home_page .work_list {
-  margin-bottom: 30px;
-}
-#home_page .skills_list ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-#home_page .skills_list .skill_box {
-  background-color: #7E8AA2;
-  color: #FFFFFF;
-  padding: 10px;
-  height: 300px;
-}
-#project_page {
-  padding-top: 30px;
-}
-#project_page #process {
-  padding-top: 20px;
-  padding-bottom: 50px;
-}
-#project_page .step_img {
-  margin-top: 25px;
-}
-#project_page .info h1 {
-  font-size: 46px;
-}
-#project_page .info .descripton {
-  font-size: 24px;
-}
-#project_page .info .tags {
-  font-size: 20px;
-  font-weight: bold;
-}
-#project_page .links ul {
-  padding: 0;
-}
-#project_page .links ul li {
-  display: inline;
-}
-#project_page .links ul li a {
-  text-decoration: none;
-  font-size: 25px;
-  color: #000000;
-  padding-right: 10px;
-}
-#project_page .large_p {
-  font-size: 20px;
-}
-footer {
-  background-color: #BF1519;
-  position: relative;
-  margin-top: -80px;
-  /* negative value of footer height */
-  height: 80px;
-  clear: both;
-  padding-top: 20px;
-  color: #FFFFFF;
-  font-size: 30px;
-}
-@media only screen and (max-width: 768px) {
-  #home_page .work_info .header {
-    text-align: left;
-  }
-  nav.navbar-default .navbar-brand {
-    padding: 15px 30px;
-  }
+  padding-top: 70px;
 }

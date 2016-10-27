@@ -9,237 +9,30 @@ html, body {
   height: 100%;
 }
 
-.compass {
-    text-align: center;
+#compass_contianer {
+    .compass {
+        width: 100px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -50px;  
+        margin-left: -50px;
+    }
+
+    .lead {
+        text-align: center;
+    }
+
+    .hint {
+        display: none;
+    }
 }
 
-a, a:hover, a:visited, a:focus{
-    color: @black;
-    text-decoration: none;
-}
 
-#wrap {
-  min-height: 100%;
-}
 
-.content {
-    padding-bottom: 80px;
-}
-
-body { 
+#home_page {
     padding-top: 70px;
 }
 
-.red_ul {
-    border-bottom: 5px solid @red;
-}
 
-.gry_bkg {
-    background-color: @light-gray;
-}
-
-.red_btn, a.red_btn, a:visited.red_btn , a:focus.red_btn {
-    border-radius: 0;
-    background-color: @red;
-    color: @white;
-    border: none;
-    font-weight: 700;
-
-    &:hover {
-        color: #333;
-        background-color: #e6e6e6;
-        border-color: #adadad;
-    }
-}
-
-.project_box {
-    text-align: left;
-    margin-bottom: 20px;
-
-    .img_wrapper {
-        height: 150px;
-        overflow: hidden;
-    }
-
-    img {
-        width: 100%;
-        margin: auto;
-    }
-
-    .caption {
-        background-color: @red;
-        color: @white;
-        padding: 15px;
-
-        h3 {
-            margin: 0;
-        }
-
-        h3,p {
-            margin-bottom: 3px;
-        }
-
-        .summary {
-            height: 50px;
-        }
-    }
-}
-
-nav.navbar-default {
-    background-color: #FFFFFF;
-    border: none;
-    border-top: 10px solid @red;
-
-    .navbar-brand {
-        color: @red;
-        font-weight: 900;
-        font-size: 40px;
-        padding: 25px 30px;
-    }
-
-    .navbar-nav {
-        & > li > a {
-            padding-top: 25px;
-            padding-bottom: 25px;
-            font-size: 22px;
-            color: @gray;
-        }
-    }
-}
-
-.img_border {
-    border: solid @blue 10px;
-}
-
-#home_page {
-    padding-top: 30px;
-
-    .logo_icon {
-        width: 150px;
-        margin: auto;
-    }
-
-    section {
-        padding-top: 50px;
-        padding-bottom: 70px;
-    }
-
-    .section_head {
-        padding-bottom: 20px;
-    }
-
-    .skill_icon {
-        font-size: 75px;
-    }
-
-    .work_info {
-        background-color: @red;
-        color: @white;
-        margin-bottom: 30px;
-        padding: 20px;
-        h2,p {
-            margin: 0; 
-        }
-
-        p.lead {
-            padding-top: 5px;
-        }
-
-        .header {
-            text-align: right;
-        }
-    }
-
-    .work_list {
-        margin-bottom: 30px;
-    }
-
-    .skills_list {
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .skill_box {
-            background-color: @gray;
-            color: @white;
-            padding: 10px;
-            height: 300px;
-        }
-    }
-}
-
-
-
-#project_page {
-    padding-top: 30px;
-
-    #process {
-        padding-top: 20px;
-        padding-bottom: 50px;
-    }
-
-    .step_img {
-        margin-top: 25px;
-    }
-
-    .info {
-
-        h1 {
-            font-size: 46px;
-        }
-
-        .descripton {
-            font-size: 24px;
-        }
-
-        .tags {
-            font-size: 20px;
-            font-weight: bold;
-        }
-    }
-
-    .links {
-        ul {
-            padding: 0;
-        }
-
-        ul li {
-            display: inline;
-        }
-
-        ul li a {
-            text-decoration: none;
-            font-size: 25px;
-            color: @black;
-            padding-right: 10px;
-        }
-    }
-
-    .large_p {
-        font-size: 20px;
-    }
-}
-
-footer {
-    background-color: @red;
-    position: relative;
-    margin-top: -80px; /* negative value of footer height */
-    height: 80px;
-    clear: both;
-    padding-top:20px;
-    color: @white;
-    font-size: 30px;
-}
-
-@media only screen and (max-width : 768px) {
-    #home_page .work_info {
-        .header {
-            text-align: left;
-        }
-    }
-
-    nav.navbar-default .navbar-brand {
-        padding: 15px 30px;
-    }
-}
+ 

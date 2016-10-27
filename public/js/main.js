@@ -70,7 +70,8 @@ $(document).ready(function() {
 
 	$('#riddle').submit(function(e){
 		e.preventDefault();
-		var answer = $('#answer').val();
+		var answer = $('#answer').val().toLowerCase();
+		$('#answer').val('');
 		if (answer.search('like') > -1) {
 			$('.right').show();
 			$('.wrong').hide();

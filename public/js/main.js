@@ -29,7 +29,7 @@ $(document).ready(function() {
 	    }
 	}
 
-	setInterval(function(){$( ".hint" ).show("slow");},60000);
+	setInterval(function(){$( ".answer" ).show("slow");},600000);
 
 	var target_lat = 37.762223;
 	var target_long = -122.421511;
@@ -63,5 +63,22 @@ $(document).ready(function() {
 
 	//RUN
 	getLocation();
+
+	$('#refresh').click(function() {
+		location.reload();
+	})
+
+	$('#riddle').submit(function(e){
+		e.preventDefault();
+		var answer = $('#answer').val();
+		if (answer.search('like') > -1) {
+			$('.right').show();
+			$('.wrong').hide();
+		} else {
+			$('.wrong').show();
+			$('.right').hide();
+		}
+	})
+
 });
 

@@ -31,8 +31,8 @@ $(document).ready(function() {
 
 	setInterval(function(){$( ".answer" ).show("slow");},600000);
 
-	var target_lat = 37.762223;
-	var target_long = -122.421511;
+	var target_lat = 41.949867;
+	var target_long = -87.663862;
 
 	//Refresh
 	var target_bearing = 0;
